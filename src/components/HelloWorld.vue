@@ -1,16 +1,27 @@
-<script setup lang="ts">
-  import { ref } from 'vue'
+<script>
+  import {pingService} from "../services/pingService";
 
-  defineProps<{ msg: string }>()
-
-  const count = ref(0)
+  export default {
+    data() {
+      return {
+        data: '',
+      }
+    },
+    methods: {
+      ping() {
+        pingService.ping().then((data)=>{
+          alert(data);
+        });
+      },
+    },
+  }
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <button type="button" @click="ping">count is {{ data }}</button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
