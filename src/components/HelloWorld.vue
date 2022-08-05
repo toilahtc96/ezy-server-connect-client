@@ -1,5 +1,5 @@
 <script>
-  import {pingService} from "../services/pingService";
+  import { pingService } from '../services/pingService'
 
   export default {
     data() {
@@ -9,9 +9,9 @@
     },
     methods: {
       ping() {
-        pingService.ping().then((data)=>{
-          alert(data);
-        });
+        pingService.ping().then((data) => {
+          alert(data)
+        })
       },
     },
   }
